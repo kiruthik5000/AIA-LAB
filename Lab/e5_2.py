@@ -8,14 +8,8 @@ def iff(p, q):
 
 # Function to get truth value from user
 def get_truth_value(label):
-    while True:
-        val = input(f"Enter truth value for {label} (T/F): ").strip().upper()
-        if val in ['T', 'TRUE']:
-            return True
-        elif val in ['F', 'FALSE']:
-            return False
-        else:
-            print("Invalid input! Please enter T or F.")
+    val = input(f"Enter Truth value of {label} (T or F)")
+    return True if val == 'T' else False
 
 
 # Propositions (now assigned by user)

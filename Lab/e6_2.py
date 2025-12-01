@@ -1,15 +1,10 @@
 import collections
 import collections.abc
-
-collections.Iterator = collections.abc.Iterator
-collections.Hashable = collections.abc.Hashable
-
 from kanren import Relation, facts, run, var, conde
 
 doctor = Relation()
 treats = Relation()
 
-# Facts
 facts(doctor,
     ("dr_smith",),
     ("dr_jones",),

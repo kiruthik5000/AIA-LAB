@@ -5,18 +5,7 @@ def print_board(board):
     print("--+---+--")
     print(f"{board[6]} | {board[7]} | {board[8]}")
     print()
-
-
-def show_positions():
-    print("Positions are numbered 1 to 9 as below:")
-    print("1 | 2 | 3")
-    print("--+---+--")
-    print("4 | 5 | 6")
-    print("--+---+--")
-    print("7 | 8 | 9")
-    print()
-
-
+    
 def is_valid_move(board, move):
     move = int(move)
     return move.isdigit() and 1 <= move <= 9 and board[move - 1] == ' '
@@ -54,7 +43,6 @@ def main():
     print("Welcome to Tic-Tac-Toe!")
     print("You are X, AI is O\n")
 
-    show_positions()
     print_board(board)
 
     while True:
@@ -89,6 +77,4 @@ def main():
             print("It's a draw!")
             break
 
-
-if __name__ == "__main__":
-    main()
+main()

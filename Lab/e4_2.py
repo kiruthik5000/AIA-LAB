@@ -31,6 +31,7 @@ def minimax(board, is_max):
     
     if winner == "O": return 1
     if winner == "X": return -1
+    
     if is_full(board): return 0
 
     best = -math.inf if is_max else math.inf

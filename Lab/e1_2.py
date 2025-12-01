@@ -1,6 +1,4 @@
 from textblob import TextBlob 
-print("Welcome all to This Sentiment Analysis Page ") 
-print("No matter what the lines number, all matters is the polarity!!") 
 user_input = input("Enter the desired passage : ") 
 
 analysis = TextBlob(user_input) 
@@ -24,6 +22,3 @@ print(f"The polarity of passage is : {polarity}")
 print(f"The subjectivity of the passage is :{subjectivity}")
 
 print(f"The Sentiment is :{sentiment}")
-
-
-# input = "this product is good"

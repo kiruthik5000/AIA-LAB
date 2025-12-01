@@ -1,56 +1,46 @@
 def a_star(graph, h, start, end):
-
-    open_list = [start, [start], 0] # queue for bfs contains [curNode, path, curDist]
-
+    q = [(start, [start], 0)]
     visited = set()
+    while q:
+        q.sort(key=lambda x: x[2] + h[x[0]])
+        cur, path, curDist = q.pop(0)
 
-    # bfs
-    while open_list:
-        open_list.sort(key=lambda x: x[2] + h[x[0]])
-        curNode, path, dist = open_list.pop(0)
+        print(f"visiting: {cur}")
 
-        print("Visiting: ", curNode)
-
-        if curNode == end:
-            print("\n Goal Reached")
+        if cur == end:
+            print("Goal Reahed\n")
             return path
+        visited.add(cur)
 
-        for neighbour, edge_cost in graph.get(curNode, []):
-            if neighbour not in visited:
-                total_cost = dist + edge_cost
-                open_list.append((neighbour, path + [neighbour], total_cost))
-    print("\n No Path Found")
+        for child, edge_cost in graph.get(cur, []):
+            if child not in visited:
+                q.append((child, path + [child], curDist + edge_cost))
+    print("No path found")
     return None
 
-# ------------ Input ------------
 graph = {}
+n = int(input("Enter number of nodes"))
+for i in range(n):
+    node = input("Enter name of the node: ")
+    neighbours = input("Enter the neighbours name, dist")
+    neighbours_list = []
 
-n = int(input("Enter Number of Nodes: "))
-
-for _ in range(n):
-    curNode = input("Enter Current Node: ")
-    neighbours = input("Enter the neighbours of the Node eg: B 1, D 2")
-    neighbour_list = []
-
-    if neighbours:
-        for pair in neighbours.strip().split(','):
-            child, cost = pair.strip().split(" ")
-
-            neighbour_list.append((child, cost))
-    graph[curNode] = neighbour_list
+    for pair in neighbours.split(','):
+        node, dist = pair.split(' ')
+        neighbours_list.append((node, int(dist)))
+    graph[node] = neighbours_list
 
 h = {}
-
 for node in graph:
-    h[node] = int(input(f"Enter the herustic value of Node {node}: "))
+    h[node] = int(input(f'Enter h val of node {node}'))
 
-start = input("Enter the start Node: ")
-end = input("Enter the end Node: ")
+start = input('enter start node')
+end = input('enter end node')
 
 result = a_star(graph, h, start, end)
 
 if result:
-    print("Path: ", "->".join(result))
+    print("->".join(result))
 else:
-    print("Cannot reach goal")
+    print("No path found")
 

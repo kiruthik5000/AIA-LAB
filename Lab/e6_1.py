@@ -1,17 +1,10 @@
 import collections
 import collections.abc
-
-# Fix for Python 3.10+
-collections.Iterator = collections.abc.Iterator
-collections.Hashable = collections.abc.Hashable
-
 from kanren import Relation, facts, run, var, conde
 
-# Knowledge base: hospital scenario
 doctor = Relation()
 treats = Relation()
 
-# Facts: doctors
 facts(doctor,
     ("dr_smith",),
     ("dr_jones",),
