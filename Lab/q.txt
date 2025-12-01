@@ -1,0 +1,23 @@
+1 i Implement a simple AI-based Sentiment Analyzer in Python using the TextBlob 
+library to classify text as positive, negative, or neutral.
+ii Modify your code to display subjectivity along with the polarity score.
+2 i Implement Breadth-First Search (BFS) algorithm to traverse a user-defined graph.
+ii Implement Depth-First Search (DFS) algorithm to traverse a user-defined graph.
+3 i Implement the A* algorithm to find the shortest path in a weighted graph.
+ii Modify the same program to compare the total cost of paths obtained from A* and 
+Greedy Best-First Search.
+4 i Implement an AI Tic-Tac-Toe game using Python where the computer plays 
+optimally against the user.
+ii Write a Python snippet to display all possible moves with their Minimax scores (short 
+version of the game logic).
+5 i Build a Propositional Logic Reasoning System that evaluates logical expressions 
+using connectives (AND, OR, NOT, →, ↔).
+ii Extend the system to accept user input for propositions and evaluate the result 
+dynamically.
+6 Create a Knowledge Base using First-Order Logic (FOL) for a hospital scenario 
+using the kanren library.
+ii Write a query to find all doctors who treat a given disease from the knowledge base.
+7 i Design a rule-based Expert System for Medical Diagnosis using forward chaining in 
+Python.
+ii Extend the system to display multiple possible diseases when symptoms overlap 
+with more than one rule.
